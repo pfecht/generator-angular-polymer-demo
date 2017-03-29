@@ -1,0 +1,36 @@
+<link rel="import" href="../bower_components/polymer-themes/the-times.html">
+<style is="custom-style">
+  :root {
+    --app-drawer-content-container: {
+      background: #CCC;
+    }
+    --paper-tabs : {margin-bottom: 12px;}
+    --paper-menu-background-color : {background-color: #CCC;}
+  }
+  body {
+      @apply(--layout-fullbleed);
+      @apply(--paper-font-body1);
+      background: var(--primary-background-color);
+      color: var(--primary-text-color);
+  }
+  app-toolbar {
+      background-color: #1E88E5;
+      color: white;
+  }
+  paper-card {
+      background: #CCC;
+      box-shadow: none !important;
+      margin: 12px 0;
+      width: 100%;
+      --paper-card-header: {
+        background-color: #DDD;
+      }
+      --paper-card-header-text: {
+        font-size:16px;
+      }
+  }
+
+  .content {
+    padding: 24px;
+  }
+</style>

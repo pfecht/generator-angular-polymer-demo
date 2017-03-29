@@ -1,0 +1,10 @@
+<div>
+  <paper-toggle-button (change)="toggleInterval()">Neue Werte laden</paper-toggle-button>
+  <google-chart type='line' [options]="options" [cols]="cols" [rows]="data"></google-chart>
+
+  <paper-card heading="Gemessene Werte">
+    <div role="listbox">
+      <paper-item *ngFor="let measurement of data">{{ measurement[0] }}: {{ measurement[1] }}</paper-item>
+    </div> 
+  </paper-card>
+</div>

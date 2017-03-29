@@ -1,0 +1,55 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="ix-demo-element">
+  <template>
+    <style>
+      .title-text {
+        font-size: 16px;
+        padding:16px;
+        background-color: #AAA;
+      }
+      .content {
+        background: #CCC;
+        padding: 16px;
+        margin-bottom:48px;
+      }
+      .checkValue {
+        margin-top: 12px;
+      }
+      .checkValue span {
+        font-weight: bold;
+      }
+
+    </style>
+    <div hidden$="[[!heading]]" class="title-text">[[heading]]</div>
+    <div class="content">
+      <div style="font-size:50px;"></div>
+      <content></content>
+      <div hidden$="[[_isHidden(checkValue)]]" class="checkValue">ng-value: <span class="ng-value">[[checkValue]]</span></div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is : 'ix-demo-element', 
+
+      properties : {
+        /**
+         * The title of the card.
+         */
+        heading: {
+          type: String,
+          value: ''
+        },
+
+        checkValue: {
+          type: String,
+          value: ''
+        }
+      },
+      _isHidden(value) {
+        return !value && value !== 0;
+      }
+    });
+  </script>
+
+</dom-module>
