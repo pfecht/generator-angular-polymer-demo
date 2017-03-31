@@ -4,7 +4,6 @@ import {Routes} from "@angular/router";
 
 export const appRoutes: Routes = [
   { path: 'dynamic-chart', component: DynamicChartComponent },
-  //{ path: 'dynamic-input',      component: DynamicInputComponent },
-  { path: 'paper-elements',      component: PaperElementsComponent },
+  { path: 'paper-elements', component: PaperElementsComponent },
   { path: '**', component: DynamicChartComponent }
 ];
