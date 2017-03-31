@@ -8,12 +8,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DynamicChartComponent } from './dynamic-chart/dynamic-chart.component';
 import { PaperElementsComponent } from './paper-elements/paper-elements.component';
+import { POLYMER_ELEMENTS } from './shared/polymer-elements/index';
 
 @NgModule({
   declarations: [
     AppComponent,
     PaperElementsComponent,
-    DynamicChartComponent
+    DynamicChartComponent,
+    POLYMER_ELEMENTS
   ],
   imports: [
     BrowserModule,

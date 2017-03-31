@@ -43,3 +43,4 @@ Thumbs.db
 
 # Custom excludes
 /src/assets/bower_components/*
+/src/app/shared/polymer-elements/*
