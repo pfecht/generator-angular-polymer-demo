@@ -1,28 +1,67 @@
-# GeneratorDemoApp
+# Demo for generator-angular-polymer
+This project demonstrates the basic usage of [generator-angular-polymer](https://github.com/pfecht/generator-angular-polymer) for [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+## Getting started
+1. Install [generator-angular-polymer](https://github.com/pfecht/generator-angular-polymer).
+2. Get the code: ```git clone https://github.com/pfecht/angular-polymer-demo.git```.
+3. Install the dependencies: run ```npm install```.
+4. Install Polymer elements: run `bower install` in `src/assets/`
+4. Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Development server
+## Project Structure 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Integration of Polymer
+Polymer and its elements are located in `src/assets/`:
 
-## Code scaffolding
+1. The core library and external elements are managed with bower.
+2. `components/` contains custom Polymer elements.
+3. `elements.html` sums up all Polymer elements which should be part of the application.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+To integrate them in angular-cli, `elements.html` is included in two files:
+1. `src/index.html` to add them to the Angular application
+2. `.yo-rc.json` to configure them for the generator.
 
-## Build
+Finally, the `angular-cli.json` has been changed to add the polyfill:
+```
+{
+  ...
+  "apps": [
+    {
+      ...
+      "scripts": [
+        "assets/bower_components/webcomponentsjs/webcomponents-lite.min.js"
+      ]
+      ...
+}
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```
 
-## Running unit tests
+### Integration of generator-angular-polymer
+The generator is configured in `.yo-rc-json` and automatically recreates the directives since he is part of the `package.json`:
+```
+"scripts": {
+  "ng": "ng",
+  "start": "yo angular-polymer && ng serve",
+  ...
+},
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`src/app/shared/polymer-elements/` contains the generated directives.
 
-## Running end-to-end tests
+`AppModule` (src/app/app.module.ts) includes the generated directives:
+```
+...
+import { POLYMER_ELEMENTS } from './shared/polymer-elements/index';
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+@NgModule({
+  declarations: [
+    ...
+    POLYMER_ELEMENTS
+  ],
+  ...
+})
+export class AppModule { }
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## License
+Apache 2.0
