@@ -3,7 +3,7 @@ This project demonstrates the basic usage of [generator-angular-polymer](https:/
 
 ## Getting started
 1. Install [generator-angular-polymer](https://github.com/pfecht/generator-angular-polymer).
-2. Get the code: ```git clone https://github.com/pfecht/angular-polymer-demo.git```.
+2. Get the code: ```git clone https://github.com/pfecht/generator-angular-polymer-demo.git```.
 3. Install the dependencies: run ```npm install```.
 4. Install Polymer elements: run `bower install` in `src/assets/`
 4. Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
