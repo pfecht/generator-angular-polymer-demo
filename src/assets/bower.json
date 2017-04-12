@@ -6,7 +6,7 @@
   ],
   "description": "Bower components for the demo of generator-angular-polymer. Mainly used for Polymer and its elements",
   "main": "",
-  "license": "MIT",
+  "license": "APACHE 2.0",
   "dependencies": {
     "app-elements": "PolymerElements/app-elements",
     "cors-upload-sample": "googledrive/cors-upload-sample#master",
